@@ -5,7 +5,7 @@ import json
 import os
 from pathlib import Path
 
-from parabox.model import chat, gemini
+from parabox.model import chat, gemini, responses
 from parabox.util import ROOT, read
 
 REQUEST_TIMEOUT_S = 360
@@ -44,6 +44,8 @@ class Client:
     def complete(self, messages: list[dict], tools=None, *, thinking: bool = True):
         if self.config.get("wire") == "gemini":
             return gemini.complete(self.config, self.key, messages, tools=tools, timeout=REQUEST_TIMEOUT_S)
+        if self.config.get("wire") == "responses":
+            return responses.complete(self.config, self.key, messages, tools=tools, timeout=REQUEST_TIMEOUT_S)
         return chat.complete(self.config, self.key, messages, tools=tools, timeout=REQUEST_TIMEOUT_S, thinking=thinking)
 
     def text(self, messages: list[dict], *, thinking: bool = True) -> str:
@@ -61,6 +63,8 @@ def assistant_message(message: dict) -> dict:
         kept["reasoning_content"] = message.get("reasoning_content") or ""
     elif message.get("reasoning_content"):
         kept["reasoning_content"] = message["reasoning_content"]
+    if "responses_output" in message:
+        kept["responses_output"] = message["responses_output"]
     return kept
 
 

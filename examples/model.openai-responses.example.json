@@ -1,0 +1,14 @@
+{
+  "base_url": "https://api.openai.com/v1",
+  "api_key_env": "OPENAI_API_KEY",
+  "model": "gpt-6.1-sol",
+  "wire": "responses",
+  "request_body": {
+    "reasoning": {
+      "effort": "high"
+    },
+    "max_output_tokens": 32768,
+    "store": false
+  },
+  "configuration_status": "ready"
+}

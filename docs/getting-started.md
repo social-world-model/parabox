@@ -71,6 +71,24 @@ studies. Copy `examples/model.example.json` to `private-model.json`, configure
 the provider and model, and set the named credential environment variable.
 Never store its secret value in JSON.
 
+For OpenAI GPT-6.1 Sol, copy
+[`examples/model.openai-responses.example.json`](../examples/model.openai-responses.example.json)
+instead and set `OPENAI_API_KEY` on the host. Its `wire: "responses"` selects
+`POST https://api.openai.com/v1/responses`; `request_body` fixes reasoning effort
+and the output-token allowance. GPT-6.1 Sol requires Responses for tool calling;
+see the [model documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol).
+Other configurations retain Chat Completions by default or select Gemini with
+`wire: "gemini"`.
+
+The Responses adapter replays only the current session's history, including
+native reasoning and function-call items, without a shared conversation ID.
+Native items are retained as `responses_output` on assistant messages in
+`meta/requests/`; unmodified provider responses, including usage, remain in
+`meta/responses/`. Tool names, descriptions, parameter schemas, turn budgets,
+submission snapshots, independent audits and scoring keep their existing
+contracts. Function declarations explicitly retain non-strict behavior unless
+the task already requests strict mode, preserving optional parameters.
+
 Set `DEADLINE` to a future timezone-aware timestamp. The example below plans
 two sessions; `run` makes paid provider calls, while `audit` runs local containers.
 
@@ -90,6 +108,11 @@ Use this as an instrument check, not a well-powered study. Conditions must be
 unique and budgets positive. Method-oriented and related seed conditions
 require the harness or open gate; consult the command's `--help` for supported
 combinations. Unified conditions do not alter the fixed benchmark design.
+
+For one method-exposed pilot session, use `--conditions method --reps 1` with
+the same task and 50-turn allowance. Add `--seed 2026101004` to use the design
+seed from the historical [extended-budget protocol](../report/studies/final/solvable-extended-budget.md).
+This is a new run with a new model, not a replication of the historical sample.
 
 `parabox-eval` aliases the unified CLI; `parabox-benchmark` aliases the default
 suite CLI. Historical commands remain under `python -m parabox`. Lean needs

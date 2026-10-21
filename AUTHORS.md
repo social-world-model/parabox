@@ -7,6 +7,7 @@ rights.
 ## Public contributor list
 
 - Easton570
+- afrmwyattmeng
 
 This initial entry is based on source-repository Git authorship. Submit a
 correction or preferred public name through a pull request. The list credits
