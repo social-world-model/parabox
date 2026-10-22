@@ -1,6 +1,7 @@
 """Model access from the host. Keys are read here and never enter a container."""
 from __future__ import annotations
 
+import copy
 import json
 import os
 from pathlib import Path
@@ -65,6 +66,9 @@ def assistant_message(message: dict) -> dict:
         kept["reasoning_content"] = message["reasoning_content"]
     if "responses_output" in message:
         kept["responses_output"] = message["responses_output"]
+    for field in ("provider_specific_fields", "reasoning_details"):
+        if field in message:
+            kept[field] = copy.deepcopy(message[field])
     return kept
 
 

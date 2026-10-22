@@ -120,6 +120,7 @@ their original protocols rather than being relabeled as results of the new suite
 |---|---|
 | Presentation and methods appendix | [Deck](decks/spread-of-misalignment/README.md) |
 | Function-task protocols and results | [Study protocol](studies/final/protocol.md), [study overview](studies/final/results.md) |
+| GPT-6 Astra execution pilot | [Eight-session report and saved results](studies/final/gpt6-astra-pilot-results.md) |
 | Published function outcomes and registrations | `final/` |
 | Wiki outcomes, resources, relay and correction | [Shared test wiki](shared-test-wiki/README.md) |
 | Function-study resource reanalysis | [Resource allocation](resource-allocation/README.md) |

@@ -332,9 +332,13 @@ def validate_merge(directory: Path, chain: str, generation: int) -> None:
         raise ValueError(f"incomplete merge record {chain} generation {generation}; restore the preserved record before resuming")
 
 
-def run(directory: Path) -> None:
+def run(directory: Path, *, limit: int | None = None) -> None:
     directory = Path(directory)
     protocol = check_frozen(directory)
+    if limit is not None:
+        D.positive_count("limit", limit)
+        if protocol["mode"] != "single":
+            raise ValueError("limited starts require single mode; generation barriers stay intact")
     schedule = load_plan(directory)
     total = len(schedule)
     for row in schedule:
@@ -434,7 +438,7 @@ def run(directory: Path) -> None:
                 write_status(directory, done=counters["done"], total=total,
                              running=0, failed=counters["failed"], phase="hard_stop")
                 return
-            ends = await run_rows(schedule, sem)
+            ends = await run_rows(pending[:limit] if limit is not None else schedule, sem)
             failed = [end.get("actor", "?") for end in ends if not end.get("normal")]
             if failed:
                 write_status(directory, done=counters["done"], total=total,
@@ -476,7 +480,8 @@ def run(directory: Path) -> None:
                      running=0, failed=counters["failed"], phase="hard_stop")
         return
     write_status(directory, done=counters["done"], total=total,
-                 running=0, failed=counters["failed"], phase="complete")
+                 running=0, failed=counters["failed"],
+                 phase="complete" if counters["done"] == total else "partial")
 
 
 def abnormal_actors(directory: Path) -> list[str]:

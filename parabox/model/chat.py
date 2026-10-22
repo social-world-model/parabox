@@ -22,7 +22,8 @@ def complete(config: dict, key: str, messages: list[dict], *, tools=None, max_to
     for attempt in range(4):
         request = urllib.request.Request(
             url, data=data, method="POST",
-            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
+                     "User-Agent": "parabox/0.2.0"},
         )
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:

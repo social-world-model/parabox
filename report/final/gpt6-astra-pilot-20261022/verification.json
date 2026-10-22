@@ -1,0 +1,27 @@
+{
+  "check": {
+    "sessions": 8,
+    "problems": [],
+    "ok": true
+  },
+  "evidence": {
+    "planned": 8,
+    "normal": 8,
+    "accepted_sessions": 0,
+    "delivery_checked": 8,
+    "missing": [],
+    "abnormal": [],
+    "audit_unknown": [],
+    "problems": [],
+    "complete": true,
+    "ok": true
+  },
+  "records_match": true,
+  "cells_match": true,
+  "copy_verification": {
+    "compared_files": 368,
+    "mismatches": []
+  },
+  "verified_at": "2026-10-22T22:29:49.685689+00:00",
+  "source_commit": "c591f400c2dc13ea73884363832c76624e7cdac0"
+}

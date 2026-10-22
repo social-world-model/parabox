@@ -240,6 +240,26 @@ class ResponsesTest(unittest.TestCase):
         self.assertEqual(self.server.requests[0]["path"], "/v1/chat/completions")
         self.assertEqual(message, raw["choices"][0]["message"])
 
+    def test_chat_gateway_accepts_an_identified_application(self):
+        self.server.reject_python_user_agent = True
+        client = Client({**self.config, "wire": "chat", "request_body": {}})
+        try:
+            message, _ = client.complete(self.messages)
+        except RuntimeError as error:
+            self.fail(f"Chat request must pass the gateway client check: {error}")
+        self.assertEqual(message["content"], "chat")
+
+    def test_native_chat_reasoning_travels_with_only_its_assistant_message(self):
+        message = {"role": "assistant", "content": "", "tool_calls": [function_call("list_dir", {})],
+                   "provider_specific_fields": {"reasoning_details": [{"data": "opaque-session-a"}]},
+                   "reasoning_details": [{"data": "opaque-top-level"}]}
+        kept = assistant_message(message)
+        self.assertEqual(kept.get("provider_specific_fields"), message["provider_specific_fields"])
+        self.assertEqual(kept.get("reasoning_details"), message["reasoning_details"])
+        kept["provider_specific_fields"]["reasoning_details"].clear()
+        self.assertEqual(len(message["provider_specific_fields"]["reasoning_details"]), 1)
+        self.assertNotIn("provider_specific_fields", assistant_message({"content": "other session"}))
+
     def test_python_session_keeps_native_logs_scoring_and_one_tool_per_turn(self):
         ignored = function_call("run_tests", {}, "ignored")
         raws = [

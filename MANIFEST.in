@@ -54,6 +54,7 @@ include report/decks/spread-of-misalignment/tables/solvable-chains.tex
 include report/decks/spread-of-misalignment/tables/solvable.tex
 include report/decks/spread-of-misalignment/tables/spread-peer-outcomes.tex
 include docs/getting-started.md
+include docs/batched-runs.md
 include docs/history.md
 include docs/index.md
 include docs/reproducibility.md
@@ -189,3 +190,12 @@ prune data/corpus/_build
 prune report/composition/review
 prune .git
 global-exclude .env .env.* *.pyc __pycache__
+include report/studies/final/gpt6-astra-pilot-results.md
+include report/final/gpt6-astra-pilot-20261022/cells.json
+include report/final/gpt6-astra-pilot-20261022/evidence.json
+include report/final/gpt6-astra-pilot-20261022/manifest.json
+include report/final/gpt6-astra-pilot-20261022/outcomes.csv
+include report/final/gpt6-astra-pilot-20261022/prompts.json
+include report/final/gpt6-astra-pilot-20261022/provenance.json
+include report/final/gpt6-astra-pilot-20261022/records.json
+include report/final/gpt6-astra-pilot-20261022/verification.json
