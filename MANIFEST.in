@@ -2,11 +2,13 @@ include README.md CONTRIBUTING.md SECURITY.md THIRD_PARTY.md LICENSE AUTHORS.md 
 include uv.lock
 recursive-include licenses *.txt
 recursive-include examples *.json
+recursive-include examples *.py
 include .containers/containers.conf
 prune docs
 prune report
 include docs/experiments.md
 include docs/running.md
+include docs/choicescript-games.md
 include report/results.md
 prune parabox/studies
 prune parabox/tasks/lean

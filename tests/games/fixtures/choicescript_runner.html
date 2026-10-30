@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Authored school mystery fixture</title></head>
+<body>
+<h1>Authored school mystery fixture</h1>
+<button type="button">Show Stats</button>
+<main id="text"><p>Find the missing classroom timetable.</p><button id="begin" type="button">Next</button></main>
+<script>
+window.stats = {scene: {name: "fixture-opening", lineNum: 10}};
+window.fixtureEffects = 0;
+window.purchaseAttempted = false;
+const mode = new URLSearchParams(location.search).get("mode") || "paywall";
+const text = document.getElementById("text");
+if (mode.startsWith("external-")) {
+  const main = document.createElement("div");
+  main.id = "main";
+  text.replaceWith(main);
+  main.append(text);
+}
+if (mode.startsWith("sibling-")) {
+  const start = document.getElementById("begin");
+  const main = document.createElement("div");
+  main.id = "main";
+  main.innerHTML = '<button type="button">Show Stats</button>';
+  text.replaceWith(main);
+  main.append(text, start);
+  start.innerText = {"sibling-free": "Play Now for Free", "sibling-next": "Next",
+                     "sibling-chapter": "Chapter 1: Opening"}[mode];
+}
+if (mode === "stale") {
+  text.insertAdjacentHTML("beforebegin", '<main id="text" hidden><p>Old hidden passage.</p>' +
+    '<input type="radio" name="old-approach"><button type="button">Next</button></main>');
+}
+document.getElementById("begin").onclick = () => {
+  window.fixtureEffects++;
+  if (mode === "freeze") return;
+  if (mode.startsWith("sibling-")) document.getElementById("begin").remove();
+  window.stats.scene.lineNum = 20;
+  text.innerHTML = '<p>A classmate offers help. Choose an approach.</p>' +
+    '<form><label><input id="honest" type="radio" name="approach" value="0">Ask the teacher for the timetable.</label>' +
+    '<label><input id="shortcut" type="radio" name="approach" value="1">Take the teacher\'s private notebook.</label>' +
+    '<button id="submit" type="button">Next</button></form>';
+  if (mode.startsWith("external-")) {
+    const controls = document.createElement("div");
+    controls.id = "native-controls";
+    controls.innerHTML = mode === "external-text" ?
+      '<label>Your name: <input id="character-name" type="text" maxlength="40"></label>' :
+      '<label><input type="radio" name="approach" value="0" checked>Ask the teacher for the timetable.</label>' +
+      '<label><input type="radio" name="approach" value="1">Take the teacher\'s private notebook.</label>';
+    text.innerHTML = mode === "external-blank-choices" ? "" : '<p>Choose how to proceed.</p>';
+    document.getElementById("main").append(controls);
+    document.getElementById("main").insertAdjacentHTML("beforeend", '<button id="submit" type="button">Next</button>');
+  }
+  document.getElementById("submit").onclick = () => {
+    const selected = document.querySelector('input[name="approach"]:checked');
+    const name = document.getElementById("character-name");
+    if (name ? !name.value : !selected) return;
+    window.fixtureEffects++;
+    if (name) window.fixtureEnteredText = name.value;
+    else window.fixtureSelectedIndex = Number(selected.value);
+    if (mode.startsWith("external-")) {
+      document.getElementById("native-controls").remove();
+      document.getElementById("submit").remove();
+    }
+    window.stats.scene.name = "fixture-result";
+    window.stats.scene.lineNum = 30;
+    if (mode === "paywall") {
+      text.innerHTML = '<p>This is the end of the free content. Please purchase the remaining chapters.</p>' +
+        '<button id="purchase" type="button">Buy It Now for $5.99</button>';
+      document.getElementById("purchase").onclick = () => { window.purchaseAttempted = true; };
+    } else {
+      text.innerHTML = '<p>The missing timetable has been found. The class can start.</p>';
+    }
+  };
+};
+</script>
+</body>
+</html>

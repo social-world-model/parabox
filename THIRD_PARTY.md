@@ -10,6 +10,7 @@ Original Parabox code and documentation use the root [MIT license](LICENSE) unle
 | Mathlib/Lean declaration and documentation index | `data/corpus/mathlib-v4.33.1.json`; v4.33.1 sources | Apache-2.0; [Mathlib license](licenses/Mathlib-Apache-2.0.txt), [Lean license](licenses/Lean-Apache-2.0.txt) and [prose-source attribution](licenses/Corpus-Attribution.txt) |
 | Model-generated text | Runtime seeds, packaged transmission and wiki-founder assets, note constants, historical documents and `report/decks/spread-of-misalignment/evidence/relay-example.json` | Provider-specific access terms; review retained excerpts and any proposed transcript export separately from the code license |
 | Bibliography and reported incidents | `report/decks/spread-of-misalignment/ref.bib` and cited publications | Attribute claims to their sources; inclusion does not confer rights to reproduce papers or imply endorsement |
+| Psy High browser UI screenshot | `report/game-interface/e04-psy-high/paywall.png`; captured from [Choice of Games](https://www.choiceofgames.com/psy-high/) on 2026-10-30 | Publisher content retains its rights and is not relicensed under the root MIT license. Included as evidence of the public paid-content boundary; no game source or story chapters are included. |
 
 Raw model runs remain local, and internal reviewer outputs are excluded. Generated declaration signatures in the corpus are pretty-printed; prose-bearing entries map to pinned upstream sources with retained copyright and author headers.
 

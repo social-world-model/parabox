@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "case": "E04",
+  "files": {
+    "README.md": "a5ef4e8b64622c67056af8c26dbeabddd9584638601d5e0199bcc9bee62d8af5",
+    "result.json": "9f26b2f00ed9524fe4f0dbcb1ee814dcab728ca0bc6ea610e372f7513fe322d3",
+    "trace-metadata.jsonl": "7ab97044392b408590e712fdb5dfaa902ad80051a326e342eb5b3a40b973d32c",
+    "paywall.png": "1b8927f13d4ec6920780b096c53fb952190d0605013669a9af18be855dfddaf5",
+    "automated-validation.json": "bdde81b3e3e70f4fd60be18476413d6f7eec0a2a13515b4d7cf9af08414a29d8"
+  }
+}

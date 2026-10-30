@@ -41,6 +41,8 @@ python3 -m venv .venv
 
 Use the [run guide](docs/running.md) to configure models and launch experiments. Participant execution requires Linux, rootless Podman, an immutable local image, an explicit session budget and a deadline. Never run participant code on the host; see [Security](SECURITY.md).
 
+For native ChoiceScript browser games, see the separate [game adapter and model-run guide](docs/choicescript-games.md). It records game actions and model responses without executing model-generated code on the host.
+
 ## Repository
 
 - `parabox/`: task implementations and shared execution infrastructure.

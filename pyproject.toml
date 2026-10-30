@@ -11,9 +11,11 @@ dependencies = ["python-dotenv>=1.0"]
 [project.scripts]
 parabox = "parabox.__main__:main"
 parabox-benchmark = "parabox.benchmark.__main__:main"
+parabox-game = "parabox.games.play:main"
 
 [project.optional-dependencies]
 report = ["matplotlib>=3.8"]
+browser = ["playwright>=1.50,<2"]
 
 [build-system]
 requires = ["setuptools==84.0.0"]
