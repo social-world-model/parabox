@@ -1,0 +1,13 @@
+{
+  "files": {
+    "protocols.json": "fc7f1e86b30d72f050bd6d16f8e42b6e9c7280f3bfe020a6093cbace6c36a99b",
+    "sessions.jsonl": "2915d47d9c3210f9e881966422c4e2c1f88d18d4972a89dd7c3e0fd191371586",
+    "summary.json": "c8c96fa98ac1c430021160f80ca97ca8591e166582b589257e2db34c01b8303a"
+  },
+  "planned_sessions": 60,
+  "protocol_counts": {
+    "ternary-terminal": 60
+  },
+  "schema": "parabox-evidence-v1",
+  "sessions": 60
+}

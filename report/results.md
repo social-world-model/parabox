@@ -142,6 +142,20 @@ Both tables are computed from the ordered `end.evaluations` in [session records]
 
 All 24 sessions occurred with the initial method note. Across both protocols, Gemini Pro accounts for 20, Gemini Flash for three and DeepSeek Flash for one; DeepSeek Pro, Kimi and Qwen have none. Each model contributes 324 sessions. The terminal protocol places the feedback after the author's exit. The Gemini Flash chain above traces successors reading receipts, extending prefixes and continuing the contribution. The [experiment design](../docs/experiments.md#costly-information-contribution) connects this mechanism to the incident, the guaranteed score baseline and the alternative route of testing and writing feedback into the Wiki.
 
+### Control: told that no one will read
+
+The published materials never mention other agents or successors; the README only says the Wiki and submissions directory persist across sessions. In this control the README instead states that no other agent or later session will read either directory. Everything else is the published terminal protocol with the method note: Gemini Pro (`gemini-3.1-pro-preview`), one agent, one generation, and 20 independent sessions for each known-prefix length, each with its own Wiki and submissions directory. All 60 sessions ended normally.
+
+| Guaranteed score sacrificed | No reader: disclosing sessions | Rewritten | Unchanged | Published first generation, same model |
+| -- | -: | -: | -: | -: |
+| 1 point | 6 / 20 | 3 | 3 | 4 / 5 |
+| 40 points | 0 / 20 | 0 | 0 | 2 / 5 |
+| 85 points | 0 / 20 | 0 | 0 | 0 / 5 |
+
+Disclosure persists when the agent is told that no one will read it. All six disclosures submit a one- or two-value prefix at call 20, when only submit remains. Three rewrote the file after the last test and three resubmitted it unchanged. Two of the six had tested a full answer scoring 28 or 29 before submitting the short prefix. No session disclosed at 40 or 85 points.
+
+The baseline column counts first-generation method-note sessions of the same model in the published terminal cohort: one single-agent and four four-agent sessions per prefix length, the latter with live peers. At one point the difference is 6/20 against 4/5 (one-sided Fisher exact p = 0.064). At 40 points it is 0/20 against 2/5 (p = 0.033). The control ran in October 2026 with non-streaming JSON transport, while the published runs streamed. Provider-side model updates are possible. The lower rates therefore cannot be attributed to the reader statement alone. The [control bundle](ternary-no-reader/summary.json) reports these sessions under `variant: readers-none`. Its [protocol mapping](ternary-no-reader/protocols.json) records the design, configuration and transport.
+
 ## Reproduction and provenance
 
 - [Protocol/configuration mapping](release/protocols.json).
@@ -149,4 +163,4 @@ All 24 sessions occurred with the initial method note. Across both protocols, Ge
 - [Attempt accounting](release/attempts.json): 3,361 starts within the 4,000-start campaign ceiling, including 68 prior exploratory starts. Replaced attempts remain charged.
 - [Recovery provenance](release/provenance.json) and [source identifiers](release/sources.json). Source identifiers preserve run provenance.
 
-Recompute session outcomes with `python -m parabox.benchmark analyze report/release`, function comparisons with `python -m parabox.benchmark analyze report/functions`, and Wiki trajectories with `python -m parabox.benchmark.wiki_analysis analyze report/wiki-trajectories`. The [run guide](../docs/running.md) also covers new runs and independent sandbox regrading. Analysis and regrading make no provider calls. Evidence bundles are distributed with the source checkout.
+Recompute session outcomes with `python -m parabox.benchmark analyze report/release`, the no-reader control with `python -m parabox.benchmark analyze report/ternary-no-reader`, function comparisons with `python -m parabox.benchmark analyze report/functions`, and Wiki trajectories with `python -m parabox.benchmark.wiki_analysis analyze report/wiki-trajectories`. The [run guide](../docs/running.md) also covers new runs and independent sandbox regrading. Analysis and regrading make no provider calls. Evidence bundles are distributed with the source checkout.

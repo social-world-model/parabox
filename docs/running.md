@@ -110,6 +110,7 @@ From a source checkout, no model or container is needed for descriptive analysis
 ```sh
 .venv/bin/python -m parabox.benchmark analyze report/release --output /tmp/parabox-summary.json
 .venv/bin/python -m parabox.benchmark analyze report/functions --output /tmp/parabox-functions.json
+.venv/bin/python -m parabox.benchmark analyze report/ternary-no-reader --output /tmp/parabox-no-reader.json
 ```
 
 The same command accepts a newly completed ternary run or a prepared published Wiki run. Unended and ungraded sessions are not turned into zero-score results. The bundle contains canonical session records, candidate source artifacts, selected relay actions, configuration mapping and attempt accounting. Strings in `sources.json` identify source records; they are not local links.

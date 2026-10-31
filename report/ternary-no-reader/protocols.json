@@ -1,0 +1,100 @@
+{
+  "content": "Per-session outcomes, evaluator feedback and source digests; transcripts, workspaces and participant code remain in the source runs.",
+  "errors": "Ternary session errors are reduced to the exception type.",
+  "runs": [
+    {
+      "chain_errors": {},
+      "design": {
+        "generations": 1,
+        "readers": "none",
+        "replicates": 20
+      },
+      "executed_sources": {
+        "benchmark/ternary/episode.py": "40a01e341e250bb6c18fa979a66face09ba952859eeb8bf01b8985320c1c57e7",
+        "benchmark/ternary/fixture.py": "7cf899c7124da75d16b95ef3513909fc71b296a3f96d8f5e0062ed0e9ae6e053",
+        "benchmark/ternary/run.py": "1ab6381625c08f1cf227197eb0728b23bbbaec94efc00bdca1c10ceea8cab087",
+        "benchmark/ternary/runtime/__init__.py": "8a878b2c3fc169b69b903bc8acd5190fcd7f241f5b7cef10fbda0144e6fdb097",
+        "benchmark/ternary/runtime/base.py": "fc61fc65f5b2c6b8770d9b2138cb3bdfa4e9cec6ebdb9a47a6e6dc966cc20a25",
+        "execution/control/__init__.py": "6189ef65d8d56a59639f4686304b526caa3c3aeb70025476f879473f44f09cb4",
+        "execution/control/guards.py": "94f635e4e78c36b2a66813a624d420ac26269e08a235523c443f7fbaade69b20",
+        "model/__init__.py": "7fe577186204ea5fef516d9e562e7aa76a6989b4dbf86adf6d614dab5ac981dc",
+        "model/anthropic.py": "68787b2b84b303793272208b80a918cf2caa6840cc671f5e1355b6f9ae14e484",
+        "model/chat.py": "52064c91b60123bccde7a86263dfd9e281e54c7da0be99827af8424901a5188b",
+        "model/gemini.py": "c1fd4fc4efc9f87fc90c4043fa16a30af9ee2b14f2603faf850b6eca10dcbe1f",
+        "model/responses.py": "8f3ff0629ef9f57176cae01e904660a44a957665ebd0c99581cfb069d759b68e",
+        "sandbox.py": "5370a89965b39a5ab8510ce44a8ce7c38ff04e3be57be742ea73db0735bb310c",
+        "util.py": "3b7bb22ce6ce6010fd19504bdc19d9247fef7701cebc2b478cc685f852502f1b",
+        "workspace.py": "bc065fdb8b6c59622a35fa776594e185db776003ebf3ec5468459365e13ad86d"
+      },
+      "experiment": "ternary",
+      "exported_sessions": 60,
+      "models": [
+        {
+          "alias": "gemini-pro",
+          "config_available": true,
+          "config_sha256": "b440d76413bce79b5ff33134f794f11881811e8d1810bad37b24b5eb8efa20ec",
+          "endpoint_host": "aiplatform.googleapis.com",
+          "model": "gemini-3.1-pro-preview",
+          "request_body": {
+            "thinking_level": "HIGH"
+          },
+          "wire": "gemini"
+        }
+      ],
+      "normal_sessions": 60,
+      "planned_sessions": 60,
+      "protocol": "ternary-terminal",
+      "published_profile": false,
+      "registration_sha256": "96f1730db7ea38351de4086ed5b7699eeb9cff9352db5ede554dcf72e7721084",
+      "sources": {
+        "benchmark/ternary/episode.py": "40a01e341e250bb6c18fa979a66face09ba952859eeb8bf01b8985320c1c57e7",
+        "benchmark/ternary/fixture.py": "7cf899c7124da75d16b95ef3513909fc71b296a3f96d8f5e0062ed0e9ae6e053",
+        "benchmark/ternary/run.py": "1ab6381625c08f1cf227197eb0728b23bbbaec94efc00bdca1c10ceea8cab087",
+        "benchmark/ternary/runtime/__init__.py": "8a878b2c3fc169b69b903bc8acd5190fcd7f241f5b7cef10fbda0144e6fdb097",
+        "benchmark/ternary/runtime/base.py": "fc61fc65f5b2c6b8770d9b2138cb3bdfa4e9cec6ebdb9a47a6e6dc966cc20a25",
+        "execution/control/__init__.py": "6189ef65d8d56a59639f4686304b526caa3c3aeb70025476f879473f44f09cb4",
+        "execution/control/guards.py": "94f635e4e78c36b2a66813a624d420ac26269e08a235523c443f7fbaade69b20",
+        "model/__init__.py": "7fe577186204ea5fef516d9e562e7aa76a6989b4dbf86adf6d614dab5ac981dc",
+        "model/anthropic.py": "68787b2b84b303793272208b80a918cf2caa6840cc671f5e1355b6f9ae14e484",
+        "model/chat.py": "52064c91b60123bccde7a86263dfd9e281e54c7da0be99827af8424901a5188b",
+        "model/gemini.py": "c1fd4fc4efc9f87fc90c4043fa16a30af9ee2b14f2603faf850b6eca10dcbe1f",
+        "model/responses.py": "8f3ff0629ef9f57176cae01e904660a44a957665ebd0c99581cfb069d759b68e",
+        "sandbox.py": "5370a89965b39a5ab8510ce44a8ce7c38ff04e3be57be742ea73db0735bb310c",
+        "util.py": "3b7bb22ce6ce6010fd19504bdc19d9247fef7701cebc2b478cc685f852502f1b",
+        "workspace.py": "bc065fdb8b6c59622a35fa776594e185db776003ebf3ec5468459365e13ad86d"
+      },
+      "sources_match_installed": true,
+      "spec": {
+        "generations": 1,
+        "image": "sha256:f3f37865609bcaa3363de61cd193e0e9595ac0b6afc9af93ea19595e28f5467e",
+        "models": {
+          "gemini-pro": "configs/gemini-pro.json"
+        },
+        "profile": "historical-v1",
+        "protocol": "terminal",
+        "readers": "none",
+        "replicates": 20,
+        "seats": 1,
+        "seed": 311681134383369942404476000178309190974,
+        "transport_profile": "json-900-v1"
+      },
+      "target_sha256": "a737931b87c96ab2cf18d3fabec320327ac8f4c7bc50b5810ecc54f35e0f7798",
+      "transport": {
+        "adapter_default_max_output_tokens": 32768,
+        "global_stream_slots": false,
+        "matches_historical_stream_transport": false,
+        "max_attempts": 4,
+        "profile": "json-900-v1",
+        "response_mode": "non-streaming",
+        "retries_json_decode_errors": true,
+        "retryable_http_statuses": [
+          429,
+          500,
+          502,
+          503
+        ],
+        "socket_timeout_seconds": 900
+      }
+    }
+  ]
+}
