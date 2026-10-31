@@ -1,0 +1,63 @@
+diff --git a/src/network/network_admin.cpp b/src/network/network_admin.cpp
+index 99ec918..8c9628a 100644
+--- a/src/network/network_admin.cpp
++++ b/src/network/network_admin.cpp
+@@ -25,0 +26,5 @@
++#ifdef __EMSCRIPTEN__
++#include <emscripten.h>
++#include "../3rdparty/nlohmann/json.hpp"
++#endif
++
+@@ -45,0 +51,47 @@ static const std::chrono::seconds ADMIN_AUTHORISATION_TIMEOUT(10);
++#ifdef __EMSCRIPTEN__
++/* Browser-only path into the same event queue used by AdminPort clients.
++ * These exports do not exist in an unpatched OpenTTD WASM build. */
++EM_JS(void, ParaboxBrowserDeliverReply, (const char *json), {
++	if (typeof Module["onParaboxOpenTTDReply"] === "function") {
++		Module["onParaboxOpenTTDReply"](UTF8ToString(json));
++	}
++});
++
++static bool ParaboxBrowserJSONSupported(const nlohmann::json &value)
++{
++	if (value.is_number_float()) return false; // ScriptEventAdminPort cannot convert floats to Squirrel.
++	if (value.is_array() || value.is_object()) {
++		for (const auto &part : value) {
++			if (!ParaboxBrowserJSONSupported(part)) return false;
++		}
++	}
++	return true;
++}
++
++extern "C" EMSCRIPTEN_KEEPALIVE const char *ParaboxOpenTTDRevision()
++{
++	return _openttd_revision.c_str();
++}
++
++extern "C" EMSCRIPTEN_KEEPALIVE int ParaboxOpenTTDSubmit(const char *json)
++{
++	if (json == nullptr || Game::GetInstance() == nullptr || (_networking && !_network_server)) return 0;
++	const std::string_view raw(json);
++	if (raw.empty() || raw.size() + 4 >= COMPAT_MTU) return 0;
++	const auto request = nlohmann::json::parse(raw, nullptr, false);
++	if (!request.is_object() || !ParaboxBrowserJSONSupported(request)) return 0;
++	const auto protocol = request.find("protocol");
++	const auto request_id = request.find("request_id");
++	const auto operation = request.find("op");
++	const auto arguments = request.find("args");
++	const auto company_id = request.find("company_id");
++	if (protocol == request.end() || !protocol->is_string() || *protocol != "parabox-openttd-v1" ||
++			request_id == request.end() || !request_id->is_string() || request_id->get<std::string>().empty() || request_id->get<std::string>().size() > 64 ||
++			operation == request.end() || !operation->is_string() || operation->get<std::string>().size() > 64 ||
++			arguments == request.end() || !arguments->is_object() || company_id == request.end() ||
++			!company_id->is_number_integer() || *company_id < 0 || *company_id > 255) return 0;
++	Game::NewEvent(new ScriptEventAdminPort(std::string(raw)));
++	return 1;
++}
++#endif
++
+@@ -1028,0 +1081,4 @@ void NetworkAdminGameScript(std::string_view json)
++#ifdef __EMSCRIPTEN__
++	const std::string terminated(json);
++	ParaboxBrowserDeliverReply(terminated.c_str());
++#endif

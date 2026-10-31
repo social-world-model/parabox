@@ -1,6 +1,6 @@
 # Third-party provenance and licenses
 
-Original Parabox code and documentation use the root [MIT license](LICENSE) unless marked otherwise. Bundled Apache-2.0 material retains that license and its notices. The package expression `MIT AND Apache-2.0` describes this combination; it is not a choice of license for every file.
+Original Parabox code and documentation use the root [MIT license](LICENSE) unless marked otherwise. Bundled Apache-2.0 material retains that license and its notices. The package expression `MIT AND Apache-2.0` describes this combination; it is not a choice of license for every file. The optional GPL-2.0-only OpenTTD browser patch is kept in the repository only and is excluded from built packages.
 
 ## Distributed material
 
@@ -10,6 +10,7 @@ Original Parabox code and documentation use the root [MIT license](LICENSE) unle
 | Mathlib/Lean declaration and documentation index | `data/corpus/mathlib-v4.33.1.json`; v4.33.1 sources | Apache-2.0; [Mathlib license](licenses/Mathlib-Apache-2.0.txt), [Lean license](licenses/Lean-Apache-2.0.txt) and [prose-source attribution](licenses/Corpus-Attribution.txt) |
 | Model-generated text | Runtime seeds, packaged transmission and wiki-founder assets, note constants, historical documents and `report/decks/spread-of-misalignment/evidence/relay-example.json` | Provider-specific access terms; review retained excerpts and any proposed transcript export separately from the code license |
 | Bibliography and reported incidents | `report/decks/spread-of-misalignment/ref.bib` and cited publications | Attribute claims to their sources; inclusion does not confer rights to reproduce papers or imply endorsement |
+| Optional OpenTTD WASM bridge patch | `integrations/openttd/browser/`; targets [OpenTTD 15.3, revision `14ec60f248547d4d062a1160f0fc26d742319888`](https://github.com/OpenTTD/OpenTTD/tree/14ec60f248547d4d062a1160f0fc26d742319888), with upstream source context and new native integration code | GPL-2.0-only for the C++ patch; [upstream license copy](integrations/openttd/browser/LICENSE-GPL-2.0.txt). The patch and license copy are repository-only and are not included in the wheel or source distribution. The external engine and WASM binaries are not bundled. Python adapters and JavaScript client code use the root MIT license. |
 
 Raw model runs remain local, and internal reviewer outputs are excluded. Generated declaration signatures in the corpus are pretty-printed; prose-bearing entries map to pinned upstream sources with retained copyright and author headers.
 
@@ -21,6 +22,8 @@ Lean/Mathlib runtimes, Python, pytest and operating-system layers are downloaded
 
 License evidence was inspected on 2026-10-12. All twelve imported Formal Conjectures statement headers were checked at the pinned revision; mappings, copyright notices and adaptation notices are retained in the attribution file. The pinned root `NOTICE` URL returned 404. Neither the pinned Mathlib nor Lean tree contained a root `NOTICE`.
 
+The optional OpenTTD patch was checked separately on 2026-10-29 against revision `14ec60f248547d4d062a1160f0fc26d742319888`. Its license copy comes from that revision's `COPYING.md`.
+
 The retained license-copy SHA-256 values are:
 
 | Copy | SHA-256 |
@@ -28,5 +31,6 @@ The retained license-copy SHA-256 values are:
 | Formal Conjectures | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
 | Mathlib | `b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1` |
 | Lean | `8b28515ffffc5c0fe2807d8ae3735b00b324d9b7ce807dd63ff6ac8922fbce7e` |
+| OpenTTD | `4942ca5c8b74a557eb3897ffe809e063982d91bc86705b72b08c0a7048dde6bc` |
 
 This record documents known provenance, not a grant of third-party rights or a legal certification. Review additional imports and distributions on their own terms.
