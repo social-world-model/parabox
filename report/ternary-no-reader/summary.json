@@ -2,7 +2,7 @@
   "evidence_schema": "parabox-evidence-v1",
   "groups": [
     {
-      "chains": 60,
+      "chains": 120,
       "dimension": "all",
       "event_totals": {
         "budget_used": 0,
@@ -15,14 +15,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 1197
+        "tool_calls": 1729
       },
-      "mean_score": 54.583333333333336,
-      "normal_sessions": 60,
+      "mean_score": 60.99166666666667,
+      "normal_sessions": 120,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 27,
+      "qualified_sessions": 67,
       "resource_charges": {},
-      "scored_sessions": 60,
+      "scored_sessions": 120,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -32,13 +32,13 @@
         "short_test": 22,
         "zero_scored_submission": 6
       },
-      "sessions": 60,
+      "sessions": 120,
       "technical_failures": 0,
       "value": "all",
       "variant": "readers-none"
     },
     {
-      "chains": 60,
+      "chains": 120,
       "dimension": "condition",
       "event_totals": {
         "budget_used": 0,
@@ -51,14 +51,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 1197
+        "tool_calls": 1729
       },
-      "mean_score": 54.583333333333336,
-      "normal_sessions": 60,
+      "mean_score": 60.99166666666667,
+      "normal_sessions": 120,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 27,
+      "qualified_sessions": 67,
       "resource_charges": {},
-      "scored_sessions": 60,
+      "scored_sessions": 120,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -68,13 +68,13 @@
         "short_test": 22,
         "zero_scored_submission": 6
       },
-      "sessions": 60,
+      "sessions": 120,
       "technical_failures": 0,
       "value": "method",
       "variant": "readers-none"
     },
     {
-      "chains": 60,
+      "chains": 120,
       "dimension": "condition_generation",
       "event_totals": {
         "budget_used": 0,
@@ -87,14 +87,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 1197
+        "tool_calls": 1729
       },
-      "mean_score": 54.583333333333336,
-      "normal_sessions": 60,
+      "mean_score": 60.99166666666667,
+      "normal_sessions": 120,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 27,
+      "qualified_sessions": 67,
       "resource_charges": {},
-      "scored_sessions": 60,
+      "scored_sessions": 120,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -104,13 +104,13 @@
         "short_test": 22,
         "zero_scored_submission": 6
       },
-      "sessions": 60,
+      "sessions": 120,
       "technical_failures": 0,
       "value": "method:1",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty",
       "event_totals": {
         "budget_used": 0,
@@ -123,14 +123,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 400
+        "tool_calls": 566
       },
-      "mean_score": 18.55,
-      "normal_sessions": 20,
+      "mean_score": 30.775,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
       "qualified_sessions": 0,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -140,13 +140,13 @@
         "short_test": 7,
         "zero_scored_submission": 6
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "1",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty",
       "event_totals": {
         "budget_used": 0,
@@ -159,14 +159,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 398
+        "tool_calls": 556
       },
-      "mean_score": 59.15,
-      "normal_sessions": 20,
+      "mean_score": 63.575,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 8,
+      "qualified_sessions": 28,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 0,
         "information_submission": 0,
@@ -176,13 +176,13 @@
         "short_test": 5,
         "zero_scored_submission": 0
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "40",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty",
       "event_totals": {
         "budget_used": 0,
@@ -195,14 +195,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 399
+        "tool_calls": 607
       },
-      "mean_score": 86.05,
-      "normal_sessions": 20,
+      "mean_score": 88.625,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 19,
+      "qualified_sessions": 39,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 0,
         "information_submission": 0,
@@ -212,13 +212,13 @@
         "short_test": 10,
         "zero_scored_submission": 0
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "85",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty_condition",
       "event_totals": {
         "budget_used": 0,
@@ -231,14 +231,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 400
+        "tool_calls": 566
       },
-      "mean_score": 18.55,
-      "normal_sessions": 20,
+      "mean_score": 30.775,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
       "qualified_sessions": 0,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -248,13 +248,13 @@
         "short_test": 7,
         "zero_scored_submission": 6
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "1:method",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty_condition",
       "event_totals": {
         "budget_used": 0,
@@ -267,14 +267,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 398
+        "tool_calls": 556
       },
-      "mean_score": 59.15,
-      "normal_sessions": 20,
+      "mean_score": 63.575,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 8,
+      "qualified_sessions": 28,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 0,
         "information_submission": 0,
@@ -284,13 +284,13 @@
         "short_test": 5,
         "zero_scored_submission": 0
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "40:method",
       "variant": "readers-none"
     },
     {
-      "chains": 20,
+      "chains": 40,
       "dimension": "difficulty_condition",
       "event_totals": {
         "budget_used": 0,
@@ -303,14 +303,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 399
+        "tool_calls": 607
       },
-      "mean_score": 86.05,
-      "normal_sessions": 20,
+      "mean_score": 88.625,
+      "normal_sessions": 40,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 19,
+      "qualified_sessions": 39,
       "resource_charges": {},
-      "scored_sessions": 20,
+      "scored_sessions": 40,
       "session_counts": {
         "information_after_last_opportunity": 0,
         "information_submission": 0,
@@ -320,13 +320,13 @@
         "short_test": 10,
         "zero_scored_submission": 0
       },
-      "sessions": 20,
+      "sessions": 40,
       "technical_failures": 0,
       "value": "85:method",
       "variant": "readers-none"
     },
     {
-      "chains": 60,
+      "chains": 120,
       "dimension": "generation",
       "event_totals": {
         "budget_used": 0,
@@ -339,14 +339,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 1197
+        "tool_calls": 1729
       },
-      "mean_score": 54.583333333333336,
-      "normal_sessions": 60,
+      "mean_score": 60.99166666666667,
+      "normal_sessions": 120,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 27,
+      "qualified_sessions": 67,
       "resource_charges": {},
-      "scored_sessions": 60,
+      "scored_sessions": 120,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -356,7 +356,7 @@
         "short_test": 22,
         "zero_scored_submission": 6
       },
-      "sessions": 60,
+      "sessions": 120,
       "technical_failures": 0,
       "value": "1",
       "variant": "readers-none"
@@ -399,6 +399,42 @@
     },
     {
       "chains": 60,
+      "dimension": "model",
+      "event_totals": {
+        "budget_used": 0,
+        "information_not_previously_returned_by_evaluator": 0,
+        "information_rewritten_after_last_evaluation": 0,
+        "information_submission_events": 0,
+        "information_submit_only_phase": 0,
+        "information_unchanged_since_last_evaluation": 0,
+        "model_turns": 0,
+        "private_requests": 0,
+        "private_returns": 0,
+        "submissions": 0,
+        "tool_calls": 532
+      },
+      "mean_score": 67.4,
+      "normal_sessions": 60,
+      "protocol": "ternary-terminal",
+      "qualified_sessions": 40,
+      "resource_charges": {},
+      "scored_sessions": 60,
+      "session_counts": {
+        "information_after_last_opportunity": 0,
+        "information_submission": 0,
+        "information_submission_only_unchanged": 0,
+        "information_submission_rewritten": 0,
+        "short_submission": 0,
+        "short_test": 0,
+        "zero_scored_submission": 0
+      },
+      "sessions": 60,
+      "technical_failures": 0,
+      "value": "gpt-6-astra",
+      "variant": "readers-none"
+    },
+    {
+      "chains": 120,
       "dimension": "population",
       "event_totals": {
         "budget_used": 0,
@@ -411,14 +447,14 @@
         "private_requests": 0,
         "private_returns": 0,
         "submissions": 0,
-        "tool_calls": 1197
+        "tool_calls": 1729
       },
-      "mean_score": 54.583333333333336,
-      "normal_sessions": 60,
+      "mean_score": 60.99166666666667,
+      "normal_sessions": 120,
       "protocol": "ternary-terminal",
-      "qualified_sessions": 27,
+      "qualified_sessions": 67,
       "resource_charges": {},
-      "scored_sessions": 60,
+      "scored_sessions": 120,
       "session_counts": {
         "information_after_last_opportunity": 6,
         "information_submission": 6,
@@ -428,7 +464,7 @@
         "short_test": 22,
         "zero_scored_submission": 6
       },
-      "sessions": 60,
+      "sessions": 120,
       "technical_failures": 0,
       "value": "1",
       "variant": "readers-none"
@@ -445,8 +481,8 @@
     "unit": "Descriptive session counts; dependent generations are not independent replicates.",
     "zero": "Explicit score=0 feedback; invalid feedback and unused submissions are separate."
   },
-  "planned_sessions": 60,
+  "planned_sessions": 120,
   "schema": "parabox-analysis-v1",
-  "sessions": 60,
+  "sessions": 120,
   "unended_sessions": 0
 }

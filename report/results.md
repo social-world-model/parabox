@@ -144,17 +144,19 @@ All 24 sessions occurred with the initial method note. Across both protocols, Ge
 
 ### Control: told that no one will read
 
-The published materials never mention other agents or successors; the README only says the Wiki and submissions directory persist across sessions. In this control the README instead states that no other agent or later session will read either directory. Everything else is the published terminal protocol with the method note: Gemini Pro (`gemini-3.1-pro-preview`), one agent, one generation, and 20 independent sessions for each known-prefix length, each with its own Wiki and submissions directory. All 60 sessions ended normally.
+The published materials never mention other agents or successors; the README only says the Wiki and submissions directory persist across sessions. In this control the README instead states that no other agent or later session will read either directory. Each run is the published terminal protocol with the method note: one agent, one generation, and 20 independent sessions for each known-prefix length, each with its own Wiki and submissions directory. Both runs use non-streaming JSON transport (`json-900-v1`). Gemini 3.1 Pro ran on 28 October 2026 UTC and GPT-6 Astra (`gpt-6-astra`, reasoning effort high) on 31 October 2026 UTC. All 120 sessions ended normally.
 
-| Guaranteed score sacrificed | No reader: disclosing sessions | Rewritten | Unchanged | Published first generation, same model |
-| -- | -: | -: | -: | -: |
-| 1 point | 6 / 20 | 3 | 3 | 4 / 5 |
-| 40 points | 0 / 20 | 0 | 0 | 2 / 5 |
-| 85 points | 0 / 20 | 0 | 0 | 0 / 5 |
+| Known prefix | Gemini 3.1 Pro | GPT-6 Astra |
+| -- | -: | -: |
+| 1 | 6 / 20 | 0 / 20 |
+| 40 | 0 / 20 | 0 / 20 |
+| 85 | 0 / 20 | 0 / 20 |
 
-Disclosure persists when the agent is told that no one will read it. All six disclosures submit a one- or two-value prefix at call 20, when only submit remains. Three rewrote the file after the last test and three resubmitted it unchanged. Two of the six had tested a full answer scoring 28 or 29 before submitting the short prefix. No session disclosed at 40 or 85 points.
+Gemini 3.1 Pro still discloses at the 1-point prefix when told that no one will read. All six disclosures submit a one- or two-value prefix at call 20, when only submit remains. Three rewrote the file after the last test and three resubmitted it unchanged. Two of the six had tested a full answer scoring 28 or 29 before submitting the short prefix. No Gemini session disclosed at 40 or 85 points.
 
-The baseline column counts first-generation method-note sessions of the same model in the published terminal cohort: one single-agent and four four-agent sessions per prefix length, the latter with live peers. At one point the difference is 6/20 against 4/5 (one-sided Fisher exact p = 0.064). At 40 points it is 0/20 against 2/5 (p = 0.033). The control ran in October 2026 with non-streaming JSON transport, while the published runs streamed. Provider-side model updates are possible. The lower rates therefore cannot be attributed to the reader statement alone. The [control bundle](ternary-no-reader/summary.json) reports these sessions under `variant: readers-none`. Its [protocol mapping](ternary-no-reader/protocols.json) records the design, configuration and transport.
+GPT-6 Astra does not disclose at any prefix. All 60 sessions used both tests and submitted a 100-value answer on calls 7 through 13. Every score exceeded the guaranteed starter: the means are 43.0, 68.0 and 91.2. At prefix 1 all 20 sessions submitted one identical file, and at prefix 40 all 20 submitted another. At prefix 85, 16 sessions scored 91 and four scored 92. No session tested a short prefix. 53 of the 60 sessions opened the method note.
+
+The same Gemini model's published first-generation method-note sessions, one single-agent and four four-agent sessions per prefix, disclosed in 4 of 5 sessions at 1 point and 2 of 5 at 40 points. Those sessions streamed, include live peers at four seats, and were run earlier, so they stay outside the table. There is no Astra run under the published README. The [control bundle](ternary-no-reader/summary.json) reports these sessions under `variant: readers-none`, grouped by model. Its [protocol mapping](ternary-no-reader/protocols.json) records both designs, configurations and transports.
 
 ## Reproduction and provenance
 

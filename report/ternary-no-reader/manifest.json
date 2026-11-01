@@ -1,13 +1,13 @@
 {
   "files": {
-    "protocols.json": "fc7f1e86b30d72f050bd6d16f8e42b6e9c7280f3bfe020a6093cbace6c36a99b",
-    "sessions.jsonl": "2915d47d9c3210f9e881966422c4e2c1f88d18d4972a89dd7c3e0fd191371586",
-    "summary.json": "c8c96fa98ac1c430021160f80ca97ca8591e166582b589257e2db34c01b8303a"
+    "protocols.json": "9f45577e7cddd924761923be8beea829cd392ae42ec2085656d58765db9b59b4",
+    "sessions.jsonl": "58cb633fbbdf30cd8d0a97fed0c5644096413ea42bb51fbf5de7c088c0f2ac32",
+    "summary.json": "004b0e10805c96991d3dc41ef6f9632def4bc0cfe9a4dd035d6f4a7f3cd8fa93"
   },
-  "planned_sessions": 60,
+  "planned_sessions": 120,
   "protocol_counts": {
-    "ternary-terminal": 60
+    "ternary-terminal": 120
   },
   "schema": "parabox-evidence-v1",
-  "sessions": 60
+  "sessions": 120
 }

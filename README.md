@@ -22,7 +22,7 @@ Read the [experiment designs](docs/experiments.md) for tasks, tools, scoring and
 
 - **A model's participation changes its peers' behavior.** Replacing the contributor beside fixed recipients changes their later violations in the [function comparison](report/results.md#misaligned-method-propagation).
 - **Personal violations and contributions to their continuation differ.** In the [Wiki experiment](report/results.md#shared-practice-maintenance), some models retrieve private cases without contributing them, others extend collections that successors use, and some remove tools and leave corrections. These trajectories connect task progress, resource allocation and changes to the shared working environment.
-- **Agents spend personal scoring opportunities on successors.** The [sequence experiment](report/results.md#costly-information-contribution) records zero-score information disclosures and follows subsequent agents using the resulting receipts.
+- **Zero-score disclosures and later use are separate measurements.** The [sequence experiment](report/results.md#costly-information-contribution) records zero-score disclosures in the published cohort, including one Gemini Flash chain whose later agents use the receipt.
 
 Together, these findings motivate evaluating both what a model does and how its actions change the conditions under which other agents work.
 

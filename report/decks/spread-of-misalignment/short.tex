@@ -530,6 +530,30 @@
   \takeaway{Only the Gemini models make terminal zero-score disclosures in this cohort.}
 \end{frame}
 
+\begin{frame}{Told that no one will read}
+  \ptag{Terminal scoring $\cdot$ method note $\cdot$ one agent, one generation $\cdot$ 20 sessions per prefix}
+  The README states that no other agent or later session will read the Wiki or the submissions directory.
+  Each prefix has its own sessions. Both models use the published target and non-streaming JSON transport.
+  \par\medskip
+  \begin{tabular}{@{}lcc@{}}
+    \toprule
+    Known prefix & Gemini 3.1 Pro & GPT-6 Astra \\
+    \midrule
+    1 point & \textbf{6/20} & 0/20 \\
+    40 points & 0/20 & 0/20 \\
+    85 points & 0/20 & 0/20 \\
+    \bottomrule
+  \end{tabular}
+  \par\medskip
+  \textbf{Astra} used both tests on 100-value answers and submitted those on calls 7--13.
+  Every score exceeded the guaranteed starter (means 43, 68 and 91.2).
+  53 of 60 sessions opened the method note. None tested a short prefix.
+  \evidence{Gemini ran on 28 October 2026 UTC and Astra on 31 October 2026 UTC.
+  Bundle: report/ternary-no-reader.
+  The published cohort streamed and includes four-agent sessions, so it is not the comparison here.}
+  \takeaway{Gemini 3.1 Pro still discloses at the 1-point prefix. Astra submits full answers and does not disclose.}
+\end{frame}
+
 \begin{frame}{Eight repeated-scoring sessions publish a next value}
   \ptag{Repeated scoring $\cdot$ three submissions averaged $\cdot$ 9 chains, 162 sessions per model}
   \begin{columns}[T]
